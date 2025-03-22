@@ -1,0 +1,400 @@
+:root {
+  /* Nashville Music City Theme */
+  --nashville-night: #1A1B25;     /* Deep night blue for backgrounds */
+  --music-gold: #FFB800;          /* Vibrant gold for accents */
+  --neon-blue: #00E5FF;           /* Bright blue for highlights */
+  --stage-purple: #9D4EDD;        /* Rich purple for secondary accents */
+  --guitar-red: #FF3366;          /* Vibrant red for important actions */
+  --sound-wave: #33FFB8;          /* Teal for success states */
+  --pure-white: #FFFFFF;          /* Clean white */
+  --smoke-white: #F8F9FA;         /* Off-white for backgrounds */
+  
+  /* Gradient definitions */
+  --gradient-music: linear-gradient(135deg, var(--nashville-night), var(--stage-purple));
+  --gradient-neon: linear-gradient(135deg, var(--neon-blue), var(--sound-wave));
+  --gradient-stage: linear-gradient(135deg, var(--guitar-red), var(--music-gold));
+  
+  /* Shadow variations */
+  --neon-glow: 0 0 20px rgba(0, 229, 255, 0.3);
+  --gold-glow: 0 0 20px rgba(255, 184, 0, 0.3);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Add these new animation effects */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 10px var(--neon-blue); }
+  50% { box-shadow: 0 0 20px var(--neon-blue); }
+  100% { box-shadow: 0 0 10px var(--neon-blue); }
+}
+
+.neon-glow {
+  animation: neonPulse 2s infinite;
+}
+
+/* Update card container styles */
+.main-actions {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Add smooth transitions */
+.LandingPage-content {
+  transition: all 0.3s ease;
+}
+
+/* Ensure responsive design */
+@media (max-width: 768px) {
+  .main-actions {
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+.nav-list .nav-item a:hover,
+.nav-list .nav-item button:hover {
+  background: var(--medium-gray);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list .nav-item a:active,
+.nav-list .nav-item button:active {
+  transform: translateY(0);
+}
+
+/* Update existing button styles */
+button {
+  background: var(--medium-gray);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--dark-gray);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Add glass effect for nav items */
+.nav-item a,
+.nav-item button {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Add subtle hover animation */
+@keyframes subtle-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.nav-item a:hover,
+.nav-item button:hover {
+  animation: subtle-glow 2s infinite;
+}
+
+/* Add these styles for the background logo */
+.background-logo {
+  filter: grayscale(100%); /* Makes it monochrome */
+}
+
+/* Update content positioning */
+.LandingPage-content {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+/* Add a subtle animation for the background logo */
+@keyframes subtle-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.background-logo {
+  animation: subtle-rotate 240s linear infinite;
+}
+
+/* Ensure cards stand out against the background */
+.main-actions > div {
+  background: var(--pure-white);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Add these new styles */
+
+/* Modern gradient backgrounds */
+.gradient-bg {
+  background: var(--gradient-music);
+}
+
+/* Glass morphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Hover animations */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Enhanced button styles */
+.modern-button {
+  background: var(--gradient-music) !important;
+  color: var(--pure-white) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.modern-button:hover {
+  background: var(--gradient-neon) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Card animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Enhanced form styles */
+.modern-form input,
+.modern-form select {
+  background: var(--smoke-white);
+  border: 1px solid var(--gray-300);
+  color: var(--nashville-night);
+}
+
+.modern-form input:focus,
+.modern-form select:focus {
+  border-color: var(--stage-purple);
+  box-shadow: 0 0 0 2px rgba(157, 78, 221, 0.2);
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 184, 0, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.3);
+  }
+}
+
+.loading-pulse {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Add new accent styles */
+.accent-text {
+  color: var(--guitar-red);
+}
+
+.gold-star {
+  color: var(--music-gold);
+}
+
+/* Add patriotic accents */
+.patriotic-border {
+  border-bottom: 4px solid var(--guitar-red);
+}
+
+/* Update button hover states */
+button:hover {
+  background: var(--gradient-neon);
+}
+
+/* Add these styles */
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.modern-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.footer button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Add a subtle floating animation for cards */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.card-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Add these styles for better visual effects */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Add these new animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-50%) translateX(-100%);
+  }
+  100% {
+    transform: translateY(-50%) translateX(100%);
+  }
+}
+
+/* Add a glow effect for text */
+.glow-text {
+  text-shadow: 0 0 10px rgba(0, 82, 255, 0.5),
+               0 0 20px rgba(0, 82, 255, 0.3),
+               0 0 30px rgba(0, 82, 255, 0.1);
+}
+
+/* Update the header text style */
+.futuristic-heading {
+  font-family: 'Arial', sans-serif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 0 30px rgba(255, 184, 0, 0.3),
+    inset 0 0 30px rgba(255, 184, 0, 0.2);
+}
+
+/* Add custom scrollbar styles */
+.utility-cards-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--music-gold) rgba(255, 255, 255, 0.1);
+}
+
+.utility-cards-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.utility-cards-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.utility-cards-scroll::-webkit-scrollbar-thumb {
+  background: var(--music-gold);
+  border-radius: 10px;
+}
